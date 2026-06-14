@@ -40,3 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 # local uploads (dev)
 .uploads/
+
+.vercel
