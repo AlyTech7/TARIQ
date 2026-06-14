@@ -1,0 +1,184 @@
+{
+  "common": {
+    "confirm": "تأكيد",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ",
+    "success": "تمت العملية بنجاح",
+    "next": "التالي",
+    "back": "رجوع",
+    "appName": "طريق — TARIQ"
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "reserve": "حجز تذكرة",
+    "myTickets": "تذاكري",
+    "profile": "الملف الشخصي",
+    "admin": "الإدارة",
+    "signOut": "تسجيل الخروج",
+    "verifyFirst": "أكمل التحقق أولاً"
+  },
+  "onboarding": {
+    "title": "تسجيل مخيم الإقامة",
+    "subtitle": "اختر مخيمك (الولاية) في تندوف وارفع شهادة تثبت انتماءك إليه. بدون هذا لا يمكن حجز التذاكر.",
+    "stepWilaya": "الولاية",
+    "stepDocument": "نوع الوثيقة",
+    "stepUpload": "رفع الشهادة",
+    "selectedWilaya": "المخيم المختار",
+    "fullName": "الاسم الكامل",
+    "arabicName": "الاسم بالعربية",
+    "phone": "رقم الهاتف",
+    "uploadCert": "شهادة الانتماء للمخيم",
+    "uploadCertHint": "شهادة التعداد أو بطاقة العائلة الصادرة عن دائرة/حي المخيم",
+    "next": "التالي",
+    "back": "رجوع",
+    "submit": "إرسال للتحقق",
+    "submitting": "جاري الإرسال...",
+    "pendingTitle": "طلبك قيد المراجعة",
+    "pendingDesc": "سيراجع مسؤول ولايتك وثيقتك خلال 24-48 ساعة. ستتلقى إشعاراً عند الموافقة.",
+    "goDashboard": "العودة للوحة التحكم"
+  },
+  "wilayaPicker": {
+    "hint": "اختر مخيم الإقامة في تندوف — هذا يحدد حصة التذاكر اليومية ومسؤول التحقق",
+    "dairas": "دوائر",
+    "ticketsDay": "تذكرة/يوم"
+  },
+  "documents": {
+    "selectHint": "الوثيقة يجب أن تُظهر بوضوح اسمك ومخيم/دائرة الإقامة",
+    "recommended": "موصى",
+    "types": {
+      "CENSUS_CERTIFICATE": "شهادة التعداد / الإقامة",
+      "FAMILY_CARD": "بطاقة العائلة (RASD)",
+      "RASD_ID": "بطاقة الهوية الوطنية",
+      "POLISARIO_LETTER": "رسالة تأييد إدارية",
+      "UNHCR_DOCUMENT": "وثيقة ACNUR"
+    }
+  },
+  "upload": {
+    "dropHere": "اسحب الملف هنا أو انقر للاختيار",
+    "maxSize": "حد أقصى {max} MB",
+    "invalidType": "نوع ملف غير مدعوم. استخدم PDF أو JPG أو PNG",
+    "tooLarge": "الملف أكبر من {max} MB",
+    "failed": "فشل الرفع. حاول مجدداً",
+    "uploaded": "تم الرفع بنجاح"
+  },
+  "verification": {
+    "required": "يجب إكمال التحقق من المخيم قبل الحجز",
+    "pending": "وثيقتك قيد المراجعة من مسؤول الولاية",
+    "rejected": "تم رفض الوثيقة — يرجى إعادة الرفع",
+    "complete": "إكمال التحقق"
+  },
+  "booking": {
+    "title": "حجز تذكرة نقل",
+    "step1": "اختر التاريخ والوجهة",
+    "step2": "البضائع المنقولة",
+    "step3": "تأكيد الحجز",
+    "travelDate": "تاريخ السفر",
+    "destination": "الوجهة في المناطق المحررة",
+    "passenger": "بيانات المسافر",
+    "passengerName": "اسم المسافر",
+    "passengerPhone": "هاتف المسافر",
+    "cargo": "البضائع",
+    "availability": "التوفر",
+    "loading": "جاري التحميل...",
+    "confirmCheckbox": "أؤكد أن المعلومات المdeclarada صحيحة وكاملة",
+    "originWilaya": "مخيم الإقامة (المنشأ)",
+    "originHint": "الحجز من ولايتك الم verified فقط",
+    "mustVerify": "يجب التحقق من انتمائك للمخيم قبل الحجز",
+    "confirmReserve": "تأكيد الحجز",
+    "addCargoItem": "إضافة بضاعة",
+    "noCargo": "لا توجد بضائع (مسافر فقط)"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "activeTicket": "تذكرتك النشطة",
+    "noActiveTicket": "لا توجد تذكرة نشطة",
+    "reserveNow": "احجز الآن",
+    "verificationPending": "حسابك قيد التحقق",
+    "uploadDocument": "رفع وثيقة الهوية",
+    "notVerified": "يجب التحقق من حسابك قبل الحجز",
+    "emergency": "حالة طوارئ نشطة",
+    "quotaToday": "التوفر اليوم"
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "subtitle": "بياناتك ومخيم الإقامة ووثائق التحقق",
+    "verified": "تم التحقق — يمكنك الحجز",
+    "pending": "الوثيقة قيد المراجعة",
+    "notVerified": "لم تكتمل عملية التحقق",
+    "wilayaSection": "مخيم الإقامة (الولاية)",
+    "changeWilaya": "تغيير",
+    "saveWilaya": "حفظ الولاية",
+    "cancel": "إلغاء",
+    "wilayaHint": "الولاية تحدد حصتك اليومية ومسؤول التحقق من وثيقتك",
+    "personalData": "البيانات الشخصية",
+    "save": "حفظ",
+    "resubmitDoc": "إعادة رفع الوثيقة",
+    "submitDoc": "إرسال للمراجعة",
+    "startOnboarding": "بدء التحقق من المخيم"
+  },
+  "ticket": {
+    "status": {
+      "PENDING_VERIFICATION": "بانتظار التحقق",
+      "VERIFIED": "مؤكد",
+      "REJECTED": "مرفوض",
+      "CANCELLED_BY_USER": "ملغى",
+      "CANCELLED_LATE": "ملغى (متأخر)",
+      "COMPLETED": "منجز",
+      "NO_SHOW": "لم يحضر"
+    },
+    "cancel": "إلغاء التذكرة",
+    "cancelWarning": "الإلغاء قبل 24 ساعة بدون عقوبة",
+    "cancelLateWarning": "إلغاء متأخر — قد يؤثر على حجوزاتك المستقبلية",
+    "showQR": "عرض QR",
+    "checkpointHint": "أبق هذه الشاشة مرئية عند نقطة التفتيش"
+  },
+  "cargo": {
+    "categories": {
+      "FOOD_DRY": "مواد غذائية جافة",
+      "WATER": "ماء",
+      "LIVESTOCK_CAMEL": "إبل",
+      "LIVESTOCK_GOAT": "ماعز / غنم",
+      "LIVESTOCK_BOVINE": "أبقار",
+      "FUEL_GASOLINE": "بنزين",
+      "FUEL_DIESEL": "ديزل",
+      "CONSTRUCTION": "مواد بناء",
+      "CLOTHING": "ملابس",
+      "SCHOOL_SUPPLIES": "مستلزمات مدرسية",
+      "MEDICAL_OFFICIAL": "مستلزمات طبية",
+      "PERSONAL_EFFECTS": "أمتعة شخصية",
+      "DATES_PALM": "تمر ونخيل",
+      "TIRES_NEW": "إطارات جديدة",
+      "OTHER": "أخرى"
+    },
+    "quantity": "الكمية",
+    "unit": "الوحدة",
+    "description": "الوصف"
+  },
+  "wilaya": {
+    "AAIUN": "العيون",
+    "AUSERD": "أوسرد",
+    "RABOUNI": "الرابوني",
+    "DAKHLA": "الداخلة",
+    "SMARA": "السمارة",
+    "BOUJEDUR": "بوجدور"
+  },
+  "admin": {
+    "dashboard": "لوحة Wilaya",
+    "tickets": "التذاكر",
+    "users": "التحقق من المستخدمين",
+    "manifest": "مانifiesto",
+    "waitlist": "قائمة الانتظار",
+    "approve": "موافقة",
+    "reject": "رفض"
+  },
+  "verify": {
+    "valid": "تذكرة صالحة",
+    "invalid": "تذكرة غير صالحة",
+    "passenger": "المسافر",
+    "origin": "المنشأ",
+    "destination": "الوجهة",
+    "date": "التاريخ"
+  }
+}

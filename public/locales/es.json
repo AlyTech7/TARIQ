@@ -1,0 +1,184 @@
+{
+  "common": {
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "success": "Operación completada",
+    "next": "Siguiente",
+    "back": "Volver",
+    "appName": "TARIQ — طريق"
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "reserve": "Reservar",
+    "myTickets": "Mis tickets",
+    "profile": "Perfil",
+    "admin": "Administración",
+    "signOut": "Cerrar sesión",
+    "verifyFirst": "Completa la verificación"
+  },
+  "onboarding": {
+    "title": "Registro de campamento",
+    "subtitle": "Selecciona tu wilaya (campamento) en Tindouf y sube un certificado que acredite tu pertenencia. Sin esto no puedes reservar.",
+    "stepWilaya": "Wilaya",
+    "stepDocument": "Tipo de documento",
+    "stepUpload": "Subir certificado",
+    "selectedWilaya": "Campamento seleccionado",
+    "fullName": "Nombre completo",
+    "arabicName": "Nombre en árabe",
+    "phone": "Teléfono",
+    "uploadCert": "Certificado de pertenencia",
+    "uploadCertHint": "Certificado de empadronamiento o tarjeta familiar emitida por la daira/barrio",
+    "next": "Siguiente",
+    "back": "Volver",
+    "submit": "Enviar a verificación",
+    "submitting": "Enviando...",
+    "pendingTitle": "Solicitud en revisión",
+    "pendingDesc": "Un administrador de tu wilaya revisará tu documento en 24-48h.",
+    "goDashboard": "Volver al panel"
+  },
+  "wilayaPicker": {
+    "hint": "Elige tu campamento de residencia en Tindouf — define tu cuota diaria y quién verifica tu documento",
+    "dairas": "dairas",
+    "ticketsDay": "tickets/día"
+  },
+  "documents": {
+    "selectHint": "El documento debe mostrar claramente tu nombre y campamento/daira de residencia",
+    "recommended": "Recomendado",
+    "types": {
+      "CENSUS_CERTIFICATE": "Certificado de empadronamiento",
+      "FAMILY_CARD": "Tarjeta familiar RASD",
+      "RASD_ID": "Documento nacional de identidad",
+      "POLISARIO_LETTER": "Carta aval administrativa",
+      "UNHCR_DOCUMENT": "Documento ACNUR"
+    }
+  },
+  "upload": {
+    "dropHere": "Arrastra aquí o haz clic para seleccionar",
+    "maxSize": "Máximo {max} MB",
+    "invalidType": "Tipo no válido. Usa PDF, JPG o PNG",
+    "tooLarge": "Archivo mayor de {max} MB",
+    "failed": "Error al subir. Inténtalo de nuevo",
+    "uploaded": "Subido correctamente"
+  },
+  "verification": {
+    "required": "Debes verificar tu campamento antes de reservar",
+    "pending": "Tu documento está en revisión por el admin de la wilaya",
+    "rejected": "Documento rechazado — vuelve a subirlo",
+    "complete": "Completar verificación"
+  },
+  "booking": {
+    "title": "Reserva de ticket de transporte",
+    "step1": "Fecha y destino",
+    "step2": "Declaración de carga",
+    "step3": "Confirmar reserva",
+    "travelDate": "Fecha de viaje",
+    "destination": "Destino en la Zona Liberada",
+    "passenger": "Datos del pasajero",
+    "passengerName": "Nombre del pasajero",
+    "passengerPhone": "Teléfono del pasajero",
+    "cargo": "Carga",
+    "availability": "Disponibilidad",
+    "loading": "Cargando...",
+    "confirmCheckbox": "Confirmo que la información declarada es correcta y completa",
+    "confirmReserve": "Confirmar reserva",
+    "addCargoItem": "Añadir ítem de carga",
+    "noCargo": "Sin carga (solo pasajero)",
+    "originWilaya": "Campamento de origen",
+    "originHint": "Reservas solo desde tu wilaya verificada",
+    "mustVerify": "Debes verificar tu pertenencia al campamento"
+  },
+  "dashboard": {
+    "title": "Panel de control",
+    "activeTicket": "Tu ticket activo",
+    "noActiveTicket": "No tienes ticket activo",
+    "reserveNow": "Reservar ahora",
+    "verificationPending": "Tu cuenta está pendiente de verificación",
+    "uploadDocument": "Subir documento de identidad",
+    "notVerified": "Debes verificar tu cuenta antes de reservar",
+    "emergency": "Modo emergencia activo",
+    "quotaToday": "Disponibilidad hoy"
+  },
+  "profile": {
+    "title": "Perfil",
+    "subtitle": "Tus datos, campamento y documentos de verificación",
+    "verified": "Verificado — puedes reservar",
+    "pending": "Documento en revisión",
+    "notVerified": "Verificación incompleta",
+    "wilayaSection": "Campamento de residencia (wilaya)",
+    "changeWilaya": "Cambiar",
+    "saveWilaya": "Guardar wilaya",
+    "cancel": "Cancelar",
+    "wilayaHint": "La wilaya define tu cuota diaria y quién verifica tu documento",
+    "personalData": "Datos personales",
+    "save": "Guardar",
+    "resubmitDoc": "Volver a subir documento",
+    "submitDoc": "Enviar a revisión",
+    "startOnboarding": "Iniciar verificación de campamento"
+  },
+  "ticket": {
+    "status": {
+      "PENDING_VERIFICATION": "Pendiente de verificación",
+      "VERIFIED": "Confirmado",
+      "REJECTED": "Rechazado",
+      "CANCELLED_BY_USER": "Cancelado",
+      "CANCELLED_LATE": "Cancelado (tardío)",
+      "COMPLETED": "Completado",
+      "NO_SHOW": "No se presentó"
+    },
+    "cancel": "Cancelar ticket",
+    "cancelWarning": "Cancelación con más de 24h sin penalización",
+    "cancelLateWarning": "Cancelación tardía — puede afectar futuras reservas",
+    "showQR": "Ver QR",
+    "checkpointHint": "Mantén esta pantalla visible en el checkpoint"
+  },
+  "cargo": {
+    "categories": {
+      "FOOD_DRY": "Alimentos secos",
+      "WATER": "Agua",
+      "LIVESTOCK_CAMEL": "Camellos",
+      "LIVESTOCK_GOAT": "Cabras/ovejas",
+      "LIVESTOCK_BOVINE": "Bovinos",
+      "FUEL_GASOLINE": "Gasolina",
+      "FUEL_DIESEL": "Gasóleo",
+      "CONSTRUCTION": "Materiales de construcción",
+      "CLOTHING": "Ropa",
+      "SCHOOL_SUPPLIES": "Material escolar",
+      "MEDICAL_OFFICIAL": "Material médico",
+      "PERSONAL_EFFECTS": "Efectos personales",
+      "DATES_PALM": "Dátiles y palmeras",
+      "TIRES_NEW": "Neumáticos nuevos",
+      "OTHER": "Otro"
+    },
+    "quantity": "Cantidad",
+    "unit": "Unidad",
+    "description": "Descripción"
+  },
+  "wilaya": {
+    "AAIUN": "El Aaiún",
+    "AUSERD": "Auserd",
+    "RABOUNI": "Rabouni",
+    "DAKHLA": "Dakhla",
+    "SMARA": "Smara",
+    "BOUJEDUR": "Boujedur"
+  },
+  "admin": {
+    "dashboard": "Panel Wilaya",
+    "tickets": "Tickets",
+    "users": "Verificación de usuarios",
+    "manifest": "Manifiesto",
+    "waitlist": "Lista de espera",
+    "approve": "Aprobar",
+    "reject": "Rechazar"
+  },
+  "verify": {
+    "valid": "Ticket válido",
+    "invalid": "Ticket no válido",
+    "passenger": "Pasajero",
+    "origin": "Origen",
+    "destination": "Destino",
+    "date": "Fecha"
+  }
+}

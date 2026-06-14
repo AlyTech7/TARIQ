@@ -1,0 +1,353 @@
+@import "tailwindcss";
+
+:root {
+  --color-sand: #c4a882;
+  --color-sand-light: #e8dcc8;
+  --color-night: #1a1410;
+  --color-polisario: #006b3c;
+  --color-polisario-light: #00884d;
+  --color-sun: #d4a017;
+  --color-alert: #c0392b;
+  --color-slate: #f5f2ee;
+  --color-text-main: #2c1810;
+
+  --background: var(--color-slate);
+  --foreground: var(--color-text-main);
+}
+
+@theme inline {
+  --color-background: #f5f2ee;
+  --color-foreground: #2c1810;
+  --color-sand: #c4a882;
+  --color-sand-light: #e8dcc8;
+  --color-night: #1a1410;
+  --color-polisario: #006b3c;
+  --color-polisario-light: #00884d;
+  --color-sun: #d4a017;
+  --color-alert: #c0392b;
+  --color-slate: #f5f2ee;
+  --color-text-main: #2c1810;
+  --font-sans: var(--font-ibm-plex);
+  --font-mono: var(--font-ibm-mono);
+  --font-arabic: var(--font-noto-arabic);
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), var(--font-arabic), system-ui, sans-serif;
+}
+
+[dir="rtl"] {
+  font-family: var(--font-arabic), var(--font-sans), system-ui, sans-serif;
+}
+
+/* ── Patrón desierto sutil ── */
+.tariq-desert-bg {
+  background-color: var(--color-slate);
+  background-image:
+    radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(196, 168, 130, 0.35),
+      transparent
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(0, 107, 60, 0.06),
+      transparent 40%
+    );
+}
+
+.tariq-hero-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-night) 0%,
+    #2a1f18 40%,
+    var(--color-polisario) 100%
+  );
+}
+
+.tariq-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(196, 168, 130, 0.35);
+}
+
+.tariq-card-hover {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.tariq-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(26, 20, 16, 0.08);
+}
+
+.ticket-code {
+  font-family: var(--font-mono), monospace;
+  color: var(--color-polisario);
+  background: var(--color-night);
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.emergency-banner {
+  background: linear-gradient(90deg, var(--color-alert), #a93226);
+  color: white;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  font-weight: 600;
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.92;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.45s ease-out forwards;
+}
+
+.stagger-1 {
+  animation-delay: 0.05s;
+}
+.stagger-2 {
+  animation-delay: 0.1s;
+}
+.stagger-3 {
+  animation-delay: 0.15s;
+}
+
+/* Stepper premium */
+.tariq-step-active {
+  background: linear-gradient(
+    135deg,
+    var(--color-polisario),
+    var(--color-polisario-light)
+  );
+  box-shadow: 0 4px 14px rgba(0, 107, 60, 0.35);
+}
+
+.tariq-step-done {
+  background: var(--color-polisario);
+  color: white;
+}
+
+.tariq-step-pending {
+  background: var(--color-sand-light);
+  color: var(--color-text-main);
+  opacity: 0.6;
+}
+
+/* Upload zone */
+.tariq-upload-zone {
+  border: 2px dashed rgba(196, 168, 130, 0.6);
+  border-radius: 1rem;
+  transition: all 0.2s ease;
+}
+
+.tariq-upload-zone:hover,
+.tariq-upload-zone.dragging {
+  border-color: var(--color-polisario);
+  background: rgba(0, 107, 60, 0.04);
+}
+
+/* ── Admin / Super-admin ── */
+.tariq-admin-bg {
+  background-color: #f0ebe4;
+  background-image:
+    radial-gradient(
+      ellipse 120% 80% at 0% 0%,
+      rgba(0, 107, 60, 0.07),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(212, 160, 23, 0.08),
+      transparent 40%
+    ),
+    linear-gradient(180deg, #f5f2ee 0%, #ebe4da 100%);
+}
+
+.tariq-super-bg {
+  background-color: #0d0a08;
+  background-image:
+    linear-gradient(rgba(0, 107, 60, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 107, 60, 0.03) 1px, transparent 1px),
+    radial-gradient(
+      ellipse 80% 50% at 50% -10%,
+      rgba(0, 107, 60, 0.18),
+      transparent 55%
+    );
+  background-size:
+    48px 48px,
+    48px 48px,
+    100% 100%;
+}
+
+.tariq-admin-sidebar {
+  background: linear-gradient(
+    180deg,
+    var(--color-night) 0%,
+    #14100c 100%
+  );
+  border-right: 1px solid rgba(196, 168, 130, 0.12);
+}
+
+.tariq-super-sidebar {
+  background: linear-gradient(
+    180deg,
+    #0a0806 0%,
+    #12100e 50%,
+    #0d0a08 100%
+  );
+  border-right: 1px solid rgba(0, 107, 60, 0.2);
+}
+
+.tariq-stat-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(196, 168, 130, 0.35);
+  border-radius: 1rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tariq-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgba(26, 20, 16, 0.1);
+}
+
+.tariq-super-stat {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 20, 16, 0.95) 0%,
+    rgba(0, 107, 60, 0.12) 100%
+  );
+  border: 1px solid rgba(0, 107, 60, 0.25);
+  border-radius: 1rem;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.tariq-super-stat-glow {
+  box-shadow:
+    0 0 24px rgba(0, 107, 60, 0.15),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.tariq-admin-glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(196, 168, 130, 0.3);
+  border-radius: 1.25rem;
+}
+
+.tariq-super-glass {
+  background: rgba(20, 16, 12, 0.75);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 107, 60, 0.2);
+  border-radius: 1.25rem;
+}
+
+.tariq-nav-active {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 107, 60, 0.35),
+    rgba(0, 107, 60, 0.08)
+  );
+  border-left: 3px solid var(--color-polisario);
+  color: white;
+}
+
+.tariq-super-nav-active {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 107, 60, 0.4),
+    transparent
+  );
+  border-left: 3px solid var(--color-sun);
+  color: var(--color-sun);
+}
+
+.tariq-wilaya-ring {
+  background: conic-gradient(
+    var(--color-polisario) var(--pct, 0%),
+    rgba(196, 168, 130, 0.25) var(--pct, 0%)
+  );
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.tariq-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+
+@keyframes pulse-ring {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.tariq-pulse-dot {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+/* Wilaya card selected ring */
+.wilaya-selected {
+  ring: 2px;
+  border-color: var(--color-polisario) !important;
+  box-shadow:
+    0 0 0 3px rgba(0, 107, 60, 0.15),
+    0 8px 24px rgba(0, 107, 60, 0.12);
+}

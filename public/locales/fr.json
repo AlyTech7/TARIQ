@@ -1,0 +1,112 @@
+{
+  "common": {
+    "confirm": "Confirmer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "success": "Opération réussie",
+    "next": "Suivant",
+    "back": "Retour",
+    "appName": "TARIQ — طريق"
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "reserve": "Réserver",
+    "myTickets": "Mes billets",
+    "profile": "Profil",
+    "admin": "Administration",
+    "signOut": "Déconnexion"
+  },
+  "booking": {
+    "title": "Réservation de transport",
+    "step1": "Date et destination",
+    "step2": "Déclaration de cargaison",
+    "step3": "Confirmer",
+    "travelDate": "Date de voyage",
+    "destination": "Destination zone libérée",
+    "passenger": "Passager",
+    "passengerName": "Nom du passager",
+    "passengerPhone": "Téléphone",
+    "cargo": "Cargaison",
+    "availability": "Disponibilité",
+    "loading": "Chargement...",
+    "confirmCheckbox": "Je confirme que les informations sont correctes",
+    "confirmReserve": "Confirmer la réservation",
+    "addCargoItem": "Ajouter un article",
+    "noCargo": "Sans cargaison"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "activeTicket": "Votre billet actif",
+    "noActiveTicket": "Aucun billet actif",
+    "reserveNow": "Réserver",
+    "verificationPending": "Compte en attente de vérification",
+    "uploadDocument": "Télécharger un document",
+    "notVerified": "Vérifiez votre compte avant de réserver",
+    "emergency": "Mode urgence actif"
+  },
+  "ticket": {
+    "status": {
+      "PENDING_VERIFICATION": "En attente",
+      "VERIFIED": "Confirmé",
+      "REJECTED": "Rejeté",
+      "CANCELLED_BY_USER": "Annulé",
+      "CANCELLED_LATE": "Annulé (tardif)",
+      "COMPLETED": "Terminé",
+      "NO_SHOW": "Absent"
+    },
+    "cancel": "Annuler",
+    "cancelWarning": "Annulation sans pénalité si >24h",
+    "cancelLateWarning": "Annulation tardive — pénalisation possible",
+    "showQR": "Voir QR",
+    "checkpointHint": "Gardez cet écran visible au checkpoint"
+  },
+  "cargo": {
+    "categories": {
+      "FOOD_DRY": "Aliments secs",
+      "WATER": "Eau",
+      "LIVESTOCK_CAMEL": "Chameaux",
+      "LIVESTOCK_GOAT": "Chèvres/moutons",
+      "LIVESTOCK_BOVINE": "Bovins",
+      "FUEL_GASOLINE": "Essence",
+      "FUEL_DIESEL": "Gasoil",
+      "CONSTRUCTION": "Matériaux",
+      "CLOTHING": "Vêtements",
+      "SCHOOL_SUPPLIES": "Fournitures scolaires",
+      "MEDICAL_OFFICIAL": "Matériel médical",
+      "PERSONAL_EFFECTS": "Effets personnels",
+      "DATES_PALM": "Dattes et palmiers",
+      "TIRES_NEW": "Pneus neufs",
+      "OTHER": "Autre"
+    },
+    "quantity": "Quantité",
+    "unit": "Unité",
+    "description": "Description"
+  },
+  "wilaya": {
+    "AAIUN": "Laâyoune",
+    "AUSERD": "Aousserd",
+    "RABOUNI": "Rabouni",
+    "DAKHLA": "Dakhla",
+    "SMARA": "Smara",
+    "BOUJEDUR": "Boujdour"
+  },
+  "admin": {
+    "dashboard": "Panel Wilaya",
+    "tickets": "Billets",
+    "users": "Vérification",
+    "manifest": "Manifeste",
+    "waitlist": "Liste d'attente",
+    "approve": "Approuver",
+    "reject": "Rejeter"
+  },
+  "verify": {
+    "valid": "Billet valide",
+    "invalid": "Billet invalide",
+    "passenger": "Passager",
+    "origin": "Origine",
+    "destination": "Destination",
+    "date": "Date"
+  }
+}

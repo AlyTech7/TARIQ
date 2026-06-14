@@ -1,0 +1,274 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Wilaya {
+  AAIUN
+  AUSERD
+  RABOUNI
+  DAKHLA
+  SMARA
+  BOUJEDUR
+}
+
+enum DestinationZone {
+  TIFARITI
+  BIR_LEHLU
+  AGUENIT
+  MEHARIZ
+  ZUG
+  MIJEK
+  BIR_TIGUISIT
+  DOUGAJ
+}
+
+enum CargoCategory {
+  FOOD_DRY
+  WATER
+  LIVESTOCK_CAMEL
+  LIVESTOCK_GOAT
+  LIVESTOCK_BOVINE
+  FUEL_GASOLINE
+  FUEL_DIESEL
+  CONSTRUCTION
+  CLOTHING
+  SCHOOL_SUPPLIES
+  MEDICAL_OFFICIAL
+  PERSONAL_EFFECTS
+  DATES_PALM
+  TIRES_NEW
+  OTHER
+}
+
+enum TicketStatus {
+  PENDING_VERIFICATION
+  VERIFIED
+  REJECTED
+  CANCELLED_BY_USER
+  CANCELLED_LATE
+  COMPLETED
+  NO_SHOW
+}
+
+enum UserRole {
+  USER
+  WILAYA_ADMIN
+  SUPER_ADMIN
+}
+
+enum DocumentType {
+  FAMILY_CARD
+  RASD_ID
+  CENSUS_CERTIFICATE
+  POLISARIO_LETTER
+  UNHCR_DOCUMENT
+}
+
+enum VerificationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum EmergencyType {
+  NONE
+  FLOOD
+  CONFLICT
+  HEALTH
+  SANDSTORM
+  OTHER
+}
+
+model User {
+  id          String    @id @default(cuid())
+  clerkId     String    @unique
+  fullName    String
+  arabicName  String?
+  phone       String?   @unique
+  email       String?   @unique
+  wilaya      Wilaya
+  dateOfBirth DateTime?
+  role        UserRole  @default(USER)
+
+  verificationStatus VerificationStatus @default(PENDING)
+  documentType       DocumentType?
+  documentUrl        String?
+  documentKey        String?
+  documentNote       String?
+  verifiedById       String?
+  verifiedAt         DateTime?
+
+  lateCancellations Int       @default(0)
+  isSuspended       Boolean   @default(false)
+  suspendedUntil    DateTime?
+  suspensionReason  String?
+
+  tickets        Ticket[]
+  auditActionsBy AuditLog[] @relation("AdminActions")
+  managedWilaya  Wilaya?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([wilaya])
+  @@index([verificationStatus])
+  @@index([clerkId])
+}
+
+model DailyQuota {
+  id         String   @id @default(cuid())
+  wilaya     Wilaya
+  date       DateTime @db.Date
+  totalSlots Int
+  usedSlots  Int      @default(0)
+
+  tickets Ticket[]
+
+  @@unique([wilaya, date])
+  @@index([date])
+}
+
+model QuotaConfig {
+  id        String   @id @default(cuid())
+  wilaya    Wilaya   @unique
+  daily     Int
+  updatedAt DateTime @updatedAt
+}
+
+model Ticket {
+  id         String @id @default(cuid())
+  ticketCode String @unique
+
+  userId  String
+  user    User       @relation(fields: [userId], references: [id])
+  quotaId String
+  quota   DailyQuota @relation(fields: [quotaId], references: [id])
+
+  travelDate   DateTime        @db.Date
+  wilayaOrigin Wilaya
+  destination  DestinationZone
+
+  passengerName  String
+  passengerPhone String?
+
+  status          TicketStatus @default(PENDING_VERIFICATION)
+  verifiedById    String?
+  verifiedAt      DateTime?
+  rejectionReason String?
+  completedAt     DateTime?
+  cancelledAt     DateTime?
+
+  cargoItems CargoItem[]
+
+  fromWaitlist  Boolean        @default(false)
+  waitlistEntry WaitlistEntry? @relation(fields: [waitlistId], references: [id])
+  waitlistId    String?        @unique
+
+  qrToken String @unique @default(cuid())
+
+  notes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([travelDate, wilayaOrigin])
+  @@index([userId])
+  @@index([status])
+  @@index([qrToken])
+}
+
+model CargoItem {
+  id       String @id @default(cuid())
+  ticketId String
+  ticket   Ticket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+
+  category    CargoCategory
+  description String?
+  quantity    Float
+  unit        String
+  estimatedKg Float?
+
+  exceedsLimit Boolean @default(false)
+  requiresAuth Boolean @default(false)
+  authDocUrl   String?
+  authDocKey   String?
+  authGranted  Boolean?
+
+  @@index([ticketId])
+}
+
+model WaitlistEntry {
+  id          String          @id @default(cuid())
+  userId      String
+  wilaya      Wilaya
+  travelDate  DateTime        @db.Date
+  destination DestinationZone
+  position    Int
+  notifiedAt  DateTime?
+  expiresAt   DateTime?
+  confirmed   Boolean         @default(false)
+  expired     Boolean         @default(false)
+
+  ticket Ticket?
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, wilaya, travelDate])
+  @@index([wilaya, travelDate, position])
+}
+
+model EmergencyState {
+  id          String        @id @default(cuid())
+  isActive    Boolean       @default(false)
+  type        EmergencyType @default(NONE)
+  message     String?
+  messageAr   String?
+  messageEs   String?
+  messageFr   String?
+  activatedBy String?
+  activatedAt DateTime?
+  resolvedAt  DateTime?
+
+  @@map("emergency_state")
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  adminId    String?
+  admin      User?    @relation("AdminActions", fields: [adminId], references: [id])
+  action     String
+  entityType String
+  entityId   String
+  metadata   Json?
+  ipAddress  String?
+  userAgent  String?
+  createdAt  DateTime @default(now())
+
+  @@index([entityId])
+  @@index([adminId])
+  @@index([createdAt])
+  @@index([action])
+}
+
+model SystemNotification {
+  id       String  @id @default(cuid())
+  userId   String
+  type     String
+  titleAr  String
+  titleEs  String
+  bodyAr   String
+  bodyEs   String
+  isRead   Boolean @default(false)
+  ticketId String?
+
+  createdAt DateTime @default(now())
+
+  @@index([userId, isRead])
+}
