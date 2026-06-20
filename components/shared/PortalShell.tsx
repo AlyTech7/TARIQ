@@ -10,7 +10,7 @@ import { AlertTriangle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WILAYA_LABELS } from "@/lib/constants";
 
-const BYPASS_PATHS = ["/onboarding", "/sign-in", "/sign-up"];
+const BYPASS_PATHS = ["/onboarding", "/sign-in", "/sign-up", "/curso-hacking"];
 
 export function PortalShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

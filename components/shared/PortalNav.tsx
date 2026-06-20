@@ -7,13 +7,14 @@ import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
 import { trpc } from "@/lib/trpc/client";
 import { cn } from "@/lib/utils";
-import { LayoutDashboard, Ticket, User, MapPin, ShieldAlert } from "lucide-react";
+import { LayoutDashboard, Ticket, User, MapPin, ShieldAlert, ShieldCheck } from "lucide-react";
 
 const NAV_ITEMS = [
   { href: "/dashboard", key: "dashboard", icon: LayoutDashboard },
   { href: "/reservar", key: "reserve", icon: Ticket, requiresVerified: true },
   { href: "/mis-tickets", key: "myTickets", icon: Ticket },
   { href: "/perfil", key: "profile", icon: User },
+  { href: "/curso-hacking", key: "cursoHacking", icon: ShieldCheck },
 ] as const;
 
 export function PortalNav() {
